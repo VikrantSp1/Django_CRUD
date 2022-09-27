@@ -1,11 +1,12 @@
-# from rest_framework import serializers
+from dataclasses import field
+from rest_framework import serializers
+from DjCRUD.models import Users
 
-# class UserlistSerializers(serializers.Serializer):
-#     username = serializers.CharField(max_length=254)
-#     id = serializers.AutoField(primary_key=True)
-#     first_name = serializers.CharField(max_length=254)
-#     last_name = serializers.CharField(max_length=254)
-#     email = serializers.EmailField()
+class UserlistSerializers(serializers.ModelSerializer):
+   class Meta:
+        model=Users
+        fields=('username','first_name','last_name')
+
 
     # def create(self, validated_data):
     #     return Comment(**validated_data)
