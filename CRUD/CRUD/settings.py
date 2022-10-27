@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'DjCRUD'
+    'DjCRUD',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -72,6 +73,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'CRUD.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -83,11 +91,13 @@ DATABASES = {
         'USER': config('DBUSR', default='root'),
         'PASSWORD': config('DBPWD', default='root'),
         'HOST': config('DBHOST', default='localhost'),
+        'STORAGE_ENGINE': 'MyISAM / INNODB / ETC',
         'PORT': 3306,
         'OPTIONS': {
             'charset': 'utf8mb4',
             'use_unicode': True,
             'sql_mode': 'traditional',
+            "init_command": "SET foreign_key_checks = 0;",
             'init_command': "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));"
         }
     }

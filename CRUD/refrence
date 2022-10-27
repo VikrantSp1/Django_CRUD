@@ -1,0 +1,91 @@
+   #check first name if its empty then we will return a error
+            # req_data['username'] = ""
+            # req_data['first_name'] = ""
+            # req_data['last_name'] = ""
+
+        #     if req_data['first_name'] is empty:
+        #         return response({'status':200,'message':'first_name is required'})
+        #     # check password is matching with confirm password
+        #     # check should have minimum 6 character   
+        #     if not req_data[password == Cpassword:
+        #         return response({'status':500,'message':'password not matched'})
+        #     elif not password should have minimumcharracter:
+        #         return response({'status':500,'message':'length error'})
+        #     if not     
+                
+                
+                
+        #         minimumcharracter=6
+        #         if not password should have minimumcharracter:
+                
+        #         else:
+        #             return response({'status':500,'message':'password not matched'})
+
+        #         return response({'status':200,'message':'password matched'})
+
+        #     else:
+        #          return response({'status':200,'message':'password not matched'})
+
+
+        #     user=Users.objects.filter(id=id).update(username=req_data['username'],first_name=req_data['first_name'],last_name=req_data['last_name'])
+        #     return Response({'status':200,'message':'users updated'})   
+        # except Exception as e:
+        #     return Response({'status':500,'message':str(e)})
+
+# def post(self,request):
+#         print('%$%$%$%$%$%$%$%')
+#         try:
+#             req_data=request.POST
+#             print(req_data)
+            
+
+#             if req_data['city']:
+#                 if not req_data['poste_code']:
+#                     return Response({'message':'please enter postel_code'} )
+#             if req_data['poste_code']=="": 
+#                 if not req_data['city']:
+#                     return Response({'message':'please enter city'} )   
+                
+#             else:
+#                 serializer=AddressSerializers(data=req_data)
+#                 if serializer.is_valid():
+
+#                     serializer.save() 
+#                     return Response(serializer.data, status=status.HTTP_201_CREATED)
+#                 else:    
+#                     return Response({'errors':serializer.errors ,'status':status.HTTP_400_BAD_REQUEST})
+           
+#         except Exception as e:
+#             return Response({'status':500,'message':str(e)})    
+
+
+
+
+
+
+# if not req_data.get('address2'):
+
+#     Address.objects.create(user=user,address1=req_data['address1'],address2=None,phonenumber=req_data['phonenumber'], city=req_data['city'],postel_code=req_data['postel_code'])
+
+# if not req_data.get('city'):
+
+#     Address.objects.create(user=user,address1=req_data['address1'],address2=req_data['address2'],phonenumber=req_data['phonenumber'], city=None,postel_code=req_data['postel_code'])
+
+# if not req_data.get('postel_code'):
+
+#     Address.objects.create(user=user,address1=req_data['address1'],address2=req_data['address2'],phonenumber=req_data['phonenumber'], city=req_data['city'],postel_code=None)
+
+
+    # address= Address.objects.get(id=44)
+    #     create = address.created_at
+    #     update = address.updated_at
+    #     d= update-create
+    #     days=d.days
+    #     seconds=d.seconds
+    #     hours = days * 24 + seconds // 3600
+    #     onedayhours = hours%24
+    #     minutes = (seconds % 3600) // 60
+    #     print(d)
+    #     print('difference',days,hours,onedayhours,minutes)
+
+    #     return Response({'diff': [days,hours,onedayhours,minutes]})
